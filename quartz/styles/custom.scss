@@ -1,3 +1,64 @@
-@use "./base.scss";
+@use './base.scss';
 
-// put your custom CSS here!
+@use 'custom/explorer';
+@use 'custom/cursors';
+@use 'custom/languagePicker';
+@use 'custom/frontmatter';
+
+// prevents superscripts (like footnote references) from increasing the line spacing
+sup {
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+  top: -0.4em;
+}
+
+// reduce unused space at top of page. default is 6rem for all.
+.page > #quartz-body .sidebar.right {
+  padding-top: 4rem !important;
+}
+
+.page > #quartz-body .sidebar.left {
+  padding-top: calc((4 - 0.1) * 1rem) !important; // reduces left sidebar slightly more to account for empty space above site title
+}
+
+.page > #quartz-body .page-header {
+  margin-top: 4rem !important;
+}
+
+// don't show page header
+.center:has(article.no-page-header) .page-header {
+  .article-title,
+  .content-meta {
+    display: none !important;
+  }
+}
+
+// prevent user text selection
+.page-title,
+.sidebar,
+.explorer,
+.graph,
+.backlinks,
+footer,
+button {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+// format sidebar links
+.sidebar-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 32px;
+
+  a {
+    color: var(--secondary);
+
+    &:hover {
+      color: var(--tertiary);
+    }
+  }
+}

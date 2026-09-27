@@ -1,0 +1,5 @@
+// hiding unwanted files in explorer
+div.explorer-content li>a[data-for="about"],
+{
+  display: none;
+}

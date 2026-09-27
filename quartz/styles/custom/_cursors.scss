@@ -1,0 +1,37 @@
+html[saved-theme="light"] {
+  body:not(.cursor-off) {
+    &, body, #quartz-body, article, p, span, li, a, button, path, svg, div {
+      cursor: url('static/cursors/pointer_c_dark.svg') 4 4, auto;
+    }
+
+    abbr[title] {
+      cursor: url('static/cursors/mark_question_pointer_b_dark.svg') 7 3, auto;
+    }
+  }
+}
+
+html[saved-theme="dark"] {
+  body:not(.cursor-off) {
+    &, body, #quartz-body, article, p, span, li, a, button, path, svg, div {
+      cursor: url('static/cursors/pointer_c.svg') 4 4, auto;
+    }
+
+    abbr[title] {
+      cursor: url('static/cursors/mark_question_pointer_b.svg') 7 3, auto;
+    }
+  }
+}
+
+body.cursor-off {
+  &, body, #quartz-body, article, p, span, li, div {
+    cursor: default !important;
+  }
+
+  a, button, [role="button"] {
+    cursor: pointer !important;
+  }
+
+  abbr[title] {
+    cursor: help !important;
+  }
+}
