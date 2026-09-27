@@ -8,8 +8,10 @@ export const sharedPageComponents: SharedLayout = {
   afterBody: [],
   footer: Component.Footer({
     links: {
-      GitHub: "https://github.com/jackyzha0/quartz",
-      "Discord Community": "https://discord.gg/cRFFHYye7t",
+      "reiwa.ca": "https://reiwa.ca",
+      GitHub: "https://github.com/rbstrachan/bookbinding",
+      Contact: "https://reiwa.ca/contact",
+      License: "https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en",
     },
   }),
 }
@@ -24,6 +26,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.ArticleTitle(),
     Component.ContentMeta(),
     Component.TagList(),
+    Component.Frontmatter()
   ],
   left: [
     Component.PageTitle(),
@@ -36,9 +39,12 @@ export const defaultContentPageLayout: PageLayout = {
         },
         { Component: Component.Darkmode() },
         { Component: Component.ReaderMode() },
+        { Component: Component.LanguagePicker() }
       ],
     }),
     Component.Explorer(),
+    Component.DesktopOnly(Component.Spacer()),
+    Component.DesktopOnly(Component.SidebarLinks())
   ],
   right: [
     Component.Graph(),
@@ -60,9 +66,12 @@ export const defaultListPageLayout: PageLayout = {
           grow: true,
         },
         { Component: Component.Darkmode() },
+        { Component: Component.LanguagePicker() }
       ],
     }),
     Component.Explorer(),
+    Component.DesktopOnly(Component.Spacer()),
+    Component.DesktopOnly(Component.SidebarLinks())
   ],
   right: [],
 }
