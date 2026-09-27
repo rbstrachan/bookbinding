@@ -1,22 +1,20 @@
 import { QuartzConfig } from "./quartz/cfg"
 import * as Plugin from "./quartz/plugins"
 
-/**
- * Quartz 4 Configuration
- *
- * See https://quartz.jzhao.xyz/configuration for more information.
- */
+const lang = process.env.QUARTZ_LANG || 'en';
+const base = "bookbinding.reiwa.ca"
+
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "Quartz 4",
-    pageTitleSuffix: "",
+    pageTitle: lang === 'fr' ? "Glossaire de référence rapide sur la reliure" : "Bookbinding Quick Reference Glossary",
+    pageTitleSuffix: "・reiwa.ca",
     enableSPA: true,
     enablePopovers: true,
     analytics: {
       provider: "plausible",
     },
-    locale: "en-US",
-    baseUrl: "quartz.jzhao.xyz",
+    locale: lang === 'ja' ? "ja-JP" : lang === 'fr' ? "fr-FR" : "en-GB",
+    baseUrl: lang === 'en' ? base : `${base}/${lang}`,
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {
@@ -88,7 +86,6 @@ const config: QuartzConfig = {
       Plugin.Static(),
       Plugin.Favicon(),
       Plugin.NotFoundPage(),
-      // Comment out CustomOgImages to speed up build time
       Plugin.CustomOgImages(),
     ],
   },
