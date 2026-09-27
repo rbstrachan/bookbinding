@@ -1,17 +1,8 @@
-# Quartz v4
+# Renegade Bookbinding Guild's Quick Reference Glossary
+A collaborative open-source glossary of bookbinding terms, published by and for members of the Renegade Bookbinding Guild.
 
-> “[One] who works with the door open gets all kinds of interruptions, but [they] also occasionally gets clues as to what the world is and what might be important.” — Richard Hamming
+## Licensing
+This project uses a dual-license model:
 
-Quartz is a set of tools that helps you publish your [digital garden](https://jzhao.xyz/posts/networked-thought) and notes as a website for free.
-
-🔗 Read the documentation and get started: https://quartz.jzhao.xyz/
-
-[Join the Discord Community](https://discord.gg/cRFFHYye7t)
-
-## Sponsors
-
-<p align="center">
-  <a href="https://github.com/sponsors/jackyzha0">
-    <img src="https://cdn.jsdelivr.net/gh/jackyzha0/jackyzha0/sponsorkit/sponsors.svg" />
-  </a>
-</p>
+- the underlying software, build scripts, and layout tools derived from Quartz are licensed under the [MIT License](LICENSE.txt).
+- all original bookbinding term, definition, text, notes and images contained within the `content/` folder(s) are created on behalf of the Renegade Bookbinding Guild and are licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0)](CONTENT_LICENCE.md).
